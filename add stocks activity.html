@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>Add Stocks</title>
+</head>
+<body>
+   
+
+<div class="container py-5">
+    <div class="m-3 border border-secondary">
+    <div class="row py-4">        
+        <div class="col-lg-8 pt-2 text-center">
+
+            <label for="productcode"></label> <br>
+            <input type="text" placeholder="Product Code"id="productcode"/> <br>
+            <label for="description"></label> <br>
+            <input type="text" placeholder="Description" id="description"/> <br>
+            <label for="quantity"> </label> <br>
+            <input type="number"placeholder="Quantity" id="quantity"/> <br>
+            <label for="price">  </label> <br/>
+            <input type="price" placeholder="Price"id="price"/> <br>
+            <br>
+            <div class="right"> 
+                <input type="button" value="Add" onclick="add_local()">
+                <input type="button" value="Show" onclick="show_local()">
+            </div>
+            
+            <div class="display"> 
+                <label for="display"></label> <br>
+                <textarea id="display" name="display" row="10"> </textarea>
+            </div>
+            
+            <script> 
+            
+            function add_local() {
+                const display = {};
+                display.productcode = document.getElementById('productcode').value;
+                display.description = document.getElementById('description').value;
+                display.quantity = document.getElementById('quantity').value;
+                display.price = document.getElementById('price').value;
+                
+            
+                window.localStorage.setItem('display', JSON.stringify(display));
+            }
+            
+            function show_local() {
+                let _display = JSON.parse(localStorage.getItem("display"));
+                document.getElementById('productcode').value = _display.productcode;
+                document.getElementById('description').value = _display.description;
+                document.getElementById('quantity').value = _display.quantity;
+                document.getElementById('price').value = _display.price;
+                document.getElementById('display').value = Object.values(_display);
+            }
+            </script>
+            
+            <br> <br>
+       <br>
+       
+       <a href="index.html">
+       <BUTTON onclick="history.back()"><<</BUTTON>
+        </a><a  href="add stocks activity.html"><bR>
+        <BUTTON onclick="history.forward()">>></BUTTON>
+        </a>
+   
+    
+    </body>
+</html>

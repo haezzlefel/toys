@@ -1,0 +1,26 @@
+*{
+    padding: 2px; ;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    
+    
+    .main{
+     background :url(./images/toy1.webp) no-repeat;   
+     background-size: cover;
+     height: 100vh;
+     background-position: 50% 50%;
+     width: 100%;
+
+    
+    }
+    .main h1{
+        font-size: 5rem;
+        font-weight: 500;
+        font-display: color  rgb(224, 217, 204);
+        text-align: left;
+        text-decoration-color:rgb(212, 209, 203);
+        font-family: 'Lobster', cursive;
+    }
+    
+     
